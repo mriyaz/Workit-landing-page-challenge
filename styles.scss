@@ -1,0 +1,350 @@
+//colors
+$header_background-color: hsl(273, 85%, 13%);
+$accent-color: hsl(150, 100%, 63%);
+$header-color: white;
+
+$tablet-width: 60%;
+$laptop-width: 50%;
+
+//flex mixin
+@mixin flex-centering($direction: row) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin centering($percent) {
+    max-width: $percent;
+    margin: auto;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    @include flex-centering(column);
+    text-align: center;
+    margin: 15px;
+    border: 1px solid black;
+
+    header {
+        padding: 5%;
+        background-color: $header_background-color;
+        color: $header-color;
+
+
+        .logo-row {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 10%;
+
+            .apply-access {
+                font-size: large;
+                font-weight: bold;
+                padding-bottom: 1%;
+                border-bottom: 3px solid $accent-color;
+
+                &:hover {
+                    cursor: pointer;
+                    color: $accent-color;
+                }
+            }
+        }
+
+        h1 {
+            font-size: 60px;
+
+            span {
+                padding-bottom: 1%;
+                border-bottom: 3px solid $accent-color;
+            }
+        }
+
+        button {
+            margin: 10%;
+            padding: 3% 5%;
+            border: 2px solid $accent-color;
+            background-color: $accent-color;
+            color: $header_background-color;
+            font-size: medium;
+
+            &:hover {
+                cursor: pointer;
+                background-color: $header_background-color;
+                color: $accent-color;
+            }
+        }
+
+        .hero-img {
+            img {
+                width: 90%;
+                margin-bottom: -30%;
+            }
+        }
+    }
+
+    main {
+        margin-top: 25%;
+        position: relative;
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 5%;
+
+            .card-number {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                border: 1px solid black;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: bold; // Make the number bold
+            }
+
+            h1 {
+                padding: 5% 0;
+            }
+
+            p {}
+        }
+    }
+
+    .founder-cta {
+        position: relative;
+        margin-bottom: 50%;
+
+        img {
+            margin-top: 10%;
+            width: 70%;
+            position: relative;
+        }
+
+        .cta {
+            position: absolute;
+            margin-top: -15%;
+            background-color: black;
+            color: white;
+            padding: 5%;
+
+            h1 {
+                padding: 5% 0;
+            }
+
+            p {}
+
+            button {
+                margin: 5%;
+                padding: 2%;
+                border: 2px solid $accent-color;
+                background-color: $accent-color;
+                color: $header_background-color;
+                font-size: medium;
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: $header_background-color;
+                    color: $accent-color;
+                }
+            }
+
+        }
+    }
+
+    footer {
+        padding: 5%;
+
+        img {
+            padding: 60px 0;
+        }
+
+        .social {
+            img {
+                padding: 15px;
+            }
+        }
+    }
+}
+
+//////Media for tablets 
+@media (min-width:768px) {
+
+    .container {
+
+        header {
+
+            .logo-row {
+                @include centering($tablet-width);
+            }
+
+            h1 {
+                @include centering($tablet-width);
+            }
+
+            button {
+                padding: 2% 4%;
+                font-weight: bold;
+            }
+
+            .hero-img {
+                @include centering($tablet-width);
+            }
+        }
+
+        main {
+
+            @include centering($tablet-width);
+            margin-top: 20%;
+
+        }
+
+        .founder-cta {
+            @include centering($tablet-width);
+            margin-bottom: 30%;
+        }
+
+        footer {
+            @include centering($tablet-width);
+        }
+    }
+
+}
+
+//////Media for laptops 
+@media (min-width:1024px) {
+    .container {
+
+        header {
+            padding: 2.5%;
+            position: relative;
+
+            .logo-row {
+                @include centering($laptop-width);
+                padding-bottom: 5%;
+            }
+
+            h1 {
+                @include centering($laptop-width);
+                font-size: 70px;
+            }
+
+            button {
+                margin: 3%;
+                padding: 1% 2%;
+                font-weight: bold;
+            }
+
+            .hero-img {
+                @include centering($laptop-width);
+                width: 100%;
+            }
+        }
+
+        header::before {
+            position: absolute;
+            content: url('assets/images/bg-pattern-1.svg');
+            margin-left: -10%;
+            left: 0;
+            top: 25%;
+        }
+
+        header::after {
+            position: absolute;
+            content: url('assets/images/bg-pattern-2.svg');
+            margin-right: -5%;
+            right: 0;
+            bottom: 10%;
+        }
+
+        main {
+
+            @include centering($laptop-width);
+
+            margin-top: 15%;
+            // position: relative;
+
+            .card {
+
+                flex-direction: row; //   
+                justify-content: space-between; //         
+                text-align: left;
+                gap: 10%;
+                padding: 5%;
+
+
+                .card-content {
+                    flex: 1;
+
+                    h1 {
+                        padding: 3% 0;
+                    }
+
+                    p {}
+                }
+            }
+
+
+
+
+        }
+
+        .founder-cta {
+            position: relative;
+            margin-bottom: 20%;
+
+            img {
+
+                margin-top: 10%;
+                width: 40%;
+                position: relative;
+                margin-left: -50%;
+            }
+
+            .cta {
+                position: absolute;
+                margin-top: -20%;
+                margin-left: 30%;
+                background-color: black;
+                color: white;
+                padding: 5%;
+
+                h1 {
+                    padding: 5% 0;
+                }
+
+
+                button {
+                    margin: 5%;
+                    padding: 2%;
+                    border: 2px solid $accent-color;
+                    background-color: $accent-color;
+                    color: $header_background-color;
+                    font-size: medium;
+
+                    &:hover {
+                        cursor: pointer;
+                        background-color: $header_background-color;
+                        color: $accent-color;
+                    }
+                }
+
+            }
+
+            .cta::after {
+                position: absolute;
+                content: url('assets/images/bg-pattern-3.svg');
+            }
+        }
+
+        footer {
+            @include centering($laptop-width);
+        }
+    }
+}

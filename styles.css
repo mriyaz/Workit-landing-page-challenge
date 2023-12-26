@@ -1,0 +1,257 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 15px;
+  border: 1px solid black;
+}
+.container header {
+  padding: 5%;
+  background-color: hsl(273, 85%, 13%);
+  color: white;
+}
+.container header .logo-row {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10%;
+}
+.container header .logo-row .apply-access {
+  font-size: large;
+  font-weight: bold;
+  padding-bottom: 1%;
+  border-bottom: 3px solid hsl(150, 100%, 63%);
+}
+.container header .logo-row .apply-access:hover {
+  cursor: pointer;
+  color: hsl(150, 100%, 63%);
+}
+.container header h1 {
+  font-size: 60px;
+}
+.container header h1 span {
+  padding-bottom: 1%;
+  border-bottom: 3px solid hsl(150, 100%, 63%);
+}
+.container header button {
+  margin: 10%;
+  padding: 3% 5%;
+  border: 2px solid hsl(150, 100%, 63%);
+  background-color: hsl(150, 100%, 63%);
+  color: hsl(273, 85%, 13%);
+  font-size: medium;
+}
+.container header button:hover {
+  cursor: pointer;
+  background-color: hsl(273, 85%, 13%);
+  color: hsl(150, 100%, 63%);
+}
+.container header .hero-img img {
+  width: 90%;
+  margin-bottom: -30%;
+}
+.container main {
+  margin-top: 25%;
+  position: relative;
+}
+.container main .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
+}
+.container main .card .card-number {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+.container main .card h1 {
+  padding: 5% 0;
+}
+.container .founder-cta {
+  position: relative;
+  margin-bottom: 50%;
+}
+.container .founder-cta img {
+  margin-top: 10%;
+  width: 70%;
+  position: relative;
+}
+.container .founder-cta .cta {
+  position: absolute;
+  margin-top: -15%;
+  background-color: black;
+  color: white;
+  padding: 5%;
+}
+.container .founder-cta .cta h1 {
+  padding: 5% 0;
+}
+.container .founder-cta .cta button {
+  margin: 5%;
+  padding: 2%;
+  border: 2px solid hsl(150, 100%, 63%);
+  background-color: hsl(150, 100%, 63%);
+  color: hsl(273, 85%, 13%);
+  font-size: medium;
+}
+.container .founder-cta .cta button:hover {
+  cursor: pointer;
+  background-color: hsl(273, 85%, 13%);
+  color: hsl(150, 100%, 63%);
+}
+.container footer {
+  padding: 5%;
+}
+.container footer img {
+  padding: 60px 0;
+}
+.container footer .social img {
+  padding: 15px;
+}
+
+@media (min-width: 768px) {
+  .container header .logo-row {
+    max-width: 60%;
+    margin: auto;
+  }
+  .container header h1 {
+    max-width: 60%;
+    margin: auto;
+  }
+  .container header button {
+    padding: 2% 4%;
+    font-weight: bold;
+  }
+  .container header .hero-img {
+    max-width: 60%;
+    margin: auto;
+  }
+  .container main {
+    max-width: 60%;
+    margin: auto;
+    margin-top: 20%;
+  }
+  .container .founder-cta {
+    max-width: 60%;
+    margin: auto;
+    margin-bottom: 30%;
+  }
+  .container footer {
+    max-width: 60%;
+    margin: auto;
+  }
+}
+@media (min-width: 1024px) {
+  .container header {
+    padding: 2.5%;
+    position: relative;
+  }
+  .container header .logo-row {
+    max-width: 50%;
+    margin: auto;
+    padding-bottom: 5%;
+  }
+  .container header h1 {
+    max-width: 50%;
+    margin: auto;
+    font-size: 70px;
+  }
+  .container header button {
+    margin: 3%;
+    padding: 1% 2%;
+    font-weight: bold;
+  }
+  .container header .hero-img {
+    max-width: 50%;
+    margin: auto;
+    width: 100%;
+  }
+  .container header::before {
+    position: absolute;
+    content: url("assets/images/bg-pattern-1.svg");
+    margin-left: -10%;
+    left: 0;
+    top: 25%;
+  }
+  .container header::after {
+    position: absolute;
+    content: url("assets/images/bg-pattern-2.svg");
+    margin-right: -5%;
+    right: 0;
+    bottom: 10%;
+  }
+  .container main {
+    max-width: 50%;
+    margin: auto;
+    margin-top: 15%;
+  }
+  .container main .card {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    gap: 10%;
+    padding: 5%;
+  }
+  .container main .card .card-content {
+    flex: 1;
+  }
+  .container main .card .card-content h1 {
+    padding: 3% 0;
+  }
+  .container .founder-cta {
+    position: relative;
+    margin-bottom: 20%;
+  }
+  .container .founder-cta img {
+    margin-top: 10%;
+    width: 40%;
+    position: relative;
+    margin-left: -50%;
+  }
+  .container .founder-cta .cta {
+    position: absolute;
+    margin-top: -20%;
+    margin-left: 30%;
+    background-color: black;
+    color: white;
+    padding: 5%;
+  }
+  .container .founder-cta .cta h1 {
+    padding: 5% 0;
+  }
+  .container .founder-cta .cta button {
+    margin: 5%;
+    padding: 2%;
+    border: 2px solid hsl(150, 100%, 63%);
+    background-color: hsl(150, 100%, 63%);
+    color: hsl(273, 85%, 13%);
+    font-size: medium;
+  }
+  .container .founder-cta .cta button:hover {
+    cursor: pointer;
+    background-color: hsl(273, 85%, 13%);
+    color: hsl(150, 100%, 63%);
+  }
+  .container .founder-cta .cta::after {
+    position: absolute;
+    content: url("assets/images/bg-pattern-3.svg");
+  }
+  .container footer {
+    max-width: 50%;
+    margin: auto;
+  }
+}/*# sourceMappingURL=styles.css.map */
